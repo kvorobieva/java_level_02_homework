@@ -17,7 +17,8 @@ public class Main {
 
         for (Object competitor : competitors) {
             for (Object obstacle : obstacles) {
-                if (obstacle instanceof Road road) {
+                if (obstacle instanceof Road) {
+                    Road road = (Road) obstacle;
                     CanRun runner = (CanRun) competitor;
                     boolean checkResult = road.check(runner);
                     if (checkResult) {
@@ -26,7 +27,8 @@ public class Main {
                         System.out.println(runner.getName() + " не смог пробежать " + road.getRoadLength() + " метров и выбыл из соревнований!");
                         break;
                     }
-                } else if (obstacle instanceof Wall wall) {
+                } else if (obstacle instanceof Wall) {
+                    Wall wall = (Wall) obstacle;
                     CanJump jumper = (CanJump) competitor;
                     boolean checkResult = wall.check(jumper);
                     if (checkResult) {
